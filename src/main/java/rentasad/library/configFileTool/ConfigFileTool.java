@@ -2,7 +2,6 @@ package rentasad.library.configFileTool;
 
 import lombok.extern.java.Log;
 import org.apache.commons.io.IOUtils;
-import org.ini4j.ConfigParser.ConfigParserException;
 import org.ini4j.Ini;
 import org.ini4j.InvalidFileFormatException;
 import org.ini4j.Wini;
