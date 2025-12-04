@@ -6,7 +6,7 @@
 
 	<groupId>rentasad.library</groupId>
 	<artifactId>rentasad.library.basicTools.configFileTool</artifactId>
-	<version>B2.6.2</version>
+	<version>3.0.0</version>
 	<url>https://github.com/rentasad/rentasad.library.basicTools.configFileTool</url>
 
 	<properties>
@@ -46,14 +46,18 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.17.0</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.ini4j/ini4j HANDLING INI-FILE
-			READ- AND WRITE -->
-		<dependency>
-			<groupId>org.ini4j</groupId>
-			<artifactId>ini4j</artifactId>
-			<version>0.5.4</version>
-		</dependency>
+        <!-- Benötigte Abhängigkeit für commons-configuration2 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.14.0</version>
+        </dependency>
+        <!-- Apache Commons Configuration2 für INI-Dateien -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-configuration2</artifactId>
+            <version>2.13.0</version>
+        </dependency>
     </dependencies>
 
 	<build>
@@ -101,5 +105,16 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-	</build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
